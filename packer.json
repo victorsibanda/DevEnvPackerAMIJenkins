@@ -11,7 +11,7 @@
     "type": "amazon-ebs",
 
 
-    "subnet_id": "subnet-0e9b6138ff1ce18f2",
+    "subnet_id": "subnet-0b6b61d8d52a5bb59",
 
     "ssh_keypair_name": "victor-eng54",
     "ssh_private_key_file": "~/.ssh/victor-eng54.pem",
@@ -35,27 +35,19 @@
     },
     "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
-    "ami_name": "Node-Example-app-VictorSibanda-{{timestamp}}"
+    "ami_name": "Victor-Sibanda-Eng54-PythonEnv-AMI-{{timestamp}}",
+    "name": "VS-Eng54-AMI"
   }],
 
   "provisioners" : [
     {
       "type": "chef-solo",
       "cookbook_paths": ["./cookbooks"],
-      "run_list" : ["NodeJSNginx::default"]
-    },
-    {
-      "type": "shell",
-      "inline": ["mkdir /home/ubuntu/app"]
-    },
-    {
-      "type": "file",
-      "source": "app/",
-      "destination": "/home/ubuntu/app"
+      "run_list" : ["PythonDevEnvCookbook::default"]
     },
     {
         "type" :  "shell",
-        "inline": ["cd /home/ubuntu/app", "sudo npm install", "sudo npm test"]
+        "inline": ["cd /home/ubuntu/code", "python3 -m pytest tests"]
     }
   ]
 }
