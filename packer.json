@@ -35,7 +35,7 @@
     },
     "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
-    "ami_name": "Victor-Sibanda-Eng54-PythonEnv-AMI-{{timestamp}}",
+    "ami_name": "Victor-Sibanda-Eng54-PythonEnv-Jenkins-AMI-{{timestamp}}",
     "name": "VS-Eng54-AMI"
   }],
 
@@ -48,6 +48,16 @@
     {
         "type" :  "shell",
         "inline": ["cd /home/ubuntu/code", "python3 -m pytest tests"]
+    },
+    {
+      "type": "file",
+      "source": "jenkins.sh",
+      "destination": "/home/ubuntu/"
+    },
+    {
+      "type": "shell",
+      "inline": ["cd /home/ubuntu", "chmod +rwx jenkins.sh"]
+
     }
   ]
 }
