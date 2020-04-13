@@ -8,98 +8,67 @@ describe port(80) do
   it { should_not be_listening }
 end
 
-# describe pip 'atomicwrites' do
-#   it {should be_installed}
-#   its('version') {should cmp = '1.3.0'}
+describe file('/usr/local/lib/python3.6/dist-packages/atomicwrites')do
+  it {should exist}
+end
+# describe file('/usr/local/lib/python3.6/dist-packages/attrs')do
+#   it {should exist}
 # end
-#
-# describe package 'attrs' do
-#   it {should be_installed}
-#   its('version') {should cmp = '19.3.0'}
+# describe file('/usr/local/lib/python3.6/dist-packages/beautifulsoup4')do
+#   it {should exist}
 # end
-#
-# describe package 'beautifulsoup4' do
-#   it {should be_installed}
-#   its('version') {should cmp = '4.8.0'}
+describe file('/usr/local/lib/python3.6/dist-packages/certifi')do
+  it {should exist}
+end
+# describe file('/usr/local/lib/python3.6/dist-packages/chardet')do
+#   it {should exist}
 # end
-#
-# describe package 'certifi' do
-#   it {should be_installed}
-#   its('version') {should cmp = '2019.6.16'}
+describe file('/usr/local/lib/python3.6/dist-packages/idna')do
+  it {should exist}
+end
+# describe file('/usr/local/lib/python3.6/dist-packages/importlib-metadata')do
+#   it {should exist}
 # end
-#
-# describe package 'chardet' do
-#   it {should be_installed}
-#   its('version') {should cmp = '3.0.4'}
+# describe file('/usr/local/lib/python3.6/dist-packages/more-itertools')do
+#   it {should exist}
 # end
-#
-# describe package 'idna' do
-#   it {should be_installed}
-#   its('version') {should cmp = '2.9'}
+describe file('/usr/local/lib/python3.6/dist-packages/packaging')do
+  it {should exist}
+end
+describe file('/usr/local/lib/python3.6/dist-packages/pluggy')do
+  it {should exist}
+end
+describe file('/usr/local/lib/python3.6/dist-packages/py')do
+  it {should exist}
+end
+# describe file('/usr/local/lib/python3.6/dist-packages/pyparsing')do
+#   it {should exist}
 # end
-#
-# describe package 'importlib-metadata' do
-#   it {should be_installed}
-#   its('version') {should cmp = '1.6.0'}
+# describe file('/usr/local/lib/python3.6/dist-packages/pytest')do
+#   it {should exist}
 # end
-#
-#
-#
-# describe package 'more-itertools' do
-#   it {should be_installed}
-#   its('version') {should cmp = '7.2.0'}
+describe file('/usr/local/lib/python3.6/dist-packages/requests')do
+  it {should exist}
+end
+# describe file('/usr/local/lib/python3.6/dist-packages/six')do
+#   it {should exist}
 # end
-# describe package 'packaging' do
-#   it {should be_installed}
-#   its('version') {should cmp = '19.1'}
-# end
-# describe package 'pluggy' do
-#   it {should be_installed}
-#   its('version') {should cmp = '0.12.0'}
-# end
-# describe package 'py' do
-#   it {should be_installed}
-#   its('version') {should cmp = '1.8.0'}
-# end
-# describe package 'pyparsing' do
-#   it {should be_installed}
-#   its('version') {should cmp = '2.4.2'}
-# end
-#
-#
-# describe package 'pytest' do
-#   it {should be_installed}
-#   its('version') {should cmp = '5.1.0'}
-# end
-# describe package 'requests' do
-#   it {should be_installed}
-#   its('version') {should cmp = '2.22.0'}
-# end
-# describe package 'six' do
-#   it {should be_installed}
-#   its('version') {should cmp = '1.12.0'}
-# end
-# describe package 'soupsieve' do
-#   it {should be_installed}
-#   its('version') {should cmp = '1.9.2'}
-# end
-# describe package 'urllib3' do
-#   it {should be_installed}
-#   its('version') {should cmp = '1.25.3'}
-# end
-# describe package 'wcwidth' do
-#   it {should be_installed}
-#   its('version') {should cmp = '0.1.7'}
-# end
-# describe package 'zipp' do
-#   it {should be_installed}
-#   its('version') {should cmp = '0.5.2'}
-# end
-# describe package 'bs4' do
-#   it {should be_installed}
-#   its('version') {should cmp = '4.9.0'}
+describe file('/usr/local/lib/python3.6/dist-packages/soupsieve')do
+  it {should exist}
+end
+describe file('/usr/local/lib/python3.6/dist-packages/urllib3')do
+  it {should exist}
+end
+describe file('/usr/local/lib/python3.6/dist-packages/wcwidth')do
+  it {should exist}
+end
+# describe file('/usr/local/lib/python3.6/dist-packages/zipp')do
+#   it {should exist}
 # end
 
+describe file('/usr/local/lib/python3.6/dist-packages/bs4')do
+  it {should exist}
+end
 describe package('python3') do
   it { should be_installed }
   its("version"){ should cmp > '3.*'}
