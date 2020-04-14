@@ -13,7 +13,7 @@ describe 'PythonDevEnvCookbook::default' do
     platform 'ubuntu', '18.04'
 
     it 'creates the code folder' do
-          expect(chef_run).to create_remote_directory('/home/vagrant/code')
+          expect(chef_run).to create_remote_directory('/home/ubuntu/code')
         end
         it 'updates the sources list' do
           expect(chef_run).to update_apt_update('update_sources')
@@ -23,7 +23,7 @@ describe 'PythonDevEnvCookbook::default' do
           expect(chef_run).to install_package('python3-pip')
         end
         it 'creates the Downloads folder with the correct permissions' do
-          expect(chef_run).to create_directory('/home/vagrant/Downloads').with(mode: '0777')
+          expect(chef_run).to create_directory('/home/ubuntu/Downloads').with(mode: '0777')
         end
         it 'converges successfully' do
           expect { chef_run }.to_not raise_error
