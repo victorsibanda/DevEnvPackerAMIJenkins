@@ -35,7 +35,7 @@
     },
     "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
-    "ami_name": "Victor-Sibanda-Eng54-PythonEnv-Jenkins-AMI-{{timestamp}}",
+    "ami_name": "Victor-Sibanda-Eng54-Jenkins-AMI",
     "name": "VS-Eng54-AMI"
   }],
 
